@@ -150,6 +150,5 @@ function anagrams(arr) {
 }
 
 console.log(anagrams(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
-// 
 
 

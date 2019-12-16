@@ -90,7 +90,6 @@ class HashMap {
     //making sure hash is unsigned - meaning non-negtive number. 
     return hash >>> 0;
   };
-  
 };
 
 module.exports = HashMap;
