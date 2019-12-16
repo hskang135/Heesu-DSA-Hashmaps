@@ -25,10 +25,12 @@ function main() {
 };
 
 // #1-1
-// Maiar => Sauron, Hobbit => Frodo
+// Maiar -> Sauron, Hobbit -> Frodo
+
 // #1-2
 // The capacity is at 24 because we have initial capacity of 8 and hashmap resized by multiplying that
 // initial capacity by SIZE_RATIO of 3. So, I get 24 total.
+
 main();
 
 
@@ -45,8 +47,8 @@ const WhatDoesThisDo = function(){
   map2.set(str3,20);
   map2.set(str4,10);
 
-  console.log(map1.get(str1));
-  console.log(map2.get(str3));
+  //console.log(map1.get(str1));
+  //console.log(map2.get(str3));
 }
 
 WhatDoesThisDo();
@@ -56,4 +58,33 @@ WhatDoesThisDo();
 // map2 = 10 because value was overwritten by map2.set(str4, 10)
 
 
-// #3
+// #3-1 Show your hash map after the insertion of keys 10, 22, 31, 4, 15, 28, 17, 88, 59 into a hash map of length 11 using open addressing and 
+// a hash function k mod m, where k is the key and m is the length.
+// -> [22, 31, 4, 15, 28, 17, 88, 59, 10]
+
+// #3-2 Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 into the hash map with collisions resolved by separate chaining. 
+// Let the hash table have a length m = 9, and let the hash function be k mod m.
+// -> [null, [28, 19, 10], 20, 12, null, 5, [15, 33], null, 17]
+
+
+// #4
+function removeDup(str) {
+  const map = new Map();
+  let newStr = '';
+
+  for(let i=0; i<str.length; i++) {
+    if(!map.has(str[i])) {
+      newStr += str[i];
+      map.set(str[i]);
+    }
+  }
+  return newStr;
+}
+
+console.log(removeDup('google')); // gole
+console.log(removeDup('google all that you think can think of')); // gole athyuinkcf
+
+
+// #5
+
+
