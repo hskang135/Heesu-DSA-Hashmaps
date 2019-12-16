@@ -126,29 +126,9 @@ function palindrome(str) {
 
 
 // #6
-// function anagrams(str) {
-//   const map = new Map();
-//   const result = [];
-  
-//   str.forEach(string => {
-//     let keys = string.split('').sort().join('');
-//     if(map.has(keys)) {
-//       console.log(map);
-//       map.set(keys,[...map.get(keys), string])
-//     }
-//     else {
-//       map.set(keys, [string])
-//     }
-//   });
-
-//   console.log(map)
-
-//   return result;
-// };
-
 function anagrams(arr) {
   let map = new HashMap();
-  let results = [];
+
   for (let idx in arr) {
     let sorted = arr[idx].split('').sort().join('');
     let anagrams;
@@ -162,9 +142,9 @@ function anagrams(arr) {
   }
   console.log(map._hashTable)
 
-  for (let entry in map._hashTable) { //still don't like this
-  console.log(map._hashTable)
-    results.get(entry.value);
+  let results = [];
+  for (let i in map._hashTable) { //still don't like this
+    results.push(map._hashTable[i].value);
   }
   return results;
 }
