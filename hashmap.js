@@ -4,7 +4,7 @@ class HashMap {
     this._hashTable = [];
     this._capacity = initialCapacity;
     this._deleted = 0;
-  }
+  };
 
   get(key) {
     const index = this._findSlot(key);
@@ -13,7 +13,7 @@ class HashMap {
       throw new Error('Key error');
     }
     return this._hashTable[index].value;
-  }
+  };
 
   set(key, value){
     const loadRatio = (this.length + this._deleted + 1) / this._capacity;
@@ -33,7 +33,7 @@ class HashMap {
       value,
       DELETED: false
     }; 
-  }
+  };
 
   delete(key) {
     const index = this._findSlot(key);
@@ -45,7 +45,7 @@ class HashMap {
     slot.DELETED = true;
     this.length--;
     this._deleted++;
-  }
+  };
 
   _findSlot(key) {
     const hash = HashMap._hashString(key);
@@ -59,7 +59,7 @@ class HashMap {
         return index;
       }
     }
-  }
+  };
 
   _resize(size) {
     const oldSlots = this._hashTable;
@@ -74,7 +74,7 @@ class HashMap {
           this.set(slot.key, slot.value);
         }
       }
-  }
+  };
 
   static _hashString(string) {
     let hash = 5381;
@@ -89,7 +89,8 @@ class HashMap {
     }
     //making sure hash is unsigned - meaning non-negtive number. 
     return hash >>> 0;
-  }
+  };
+  
 };
 
 module.exports = HashMap;

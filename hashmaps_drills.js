@@ -49,7 +49,7 @@ const WhatDoesThisDo = function(){
 
   //console.log(map1.get(str1)); // 20
   //console.log(map2.get(str3)); // 10
-}
+};
 
 WhatDoesThisDo();
 
@@ -74,17 +74,74 @@ function removeDup(str) {
 
   for(let i=0; i<str.length; i++) {
     if(!map.has(str[i])) {
+      console.log(map);
       newStr += str[i];
       map.set(str[i]);
     }
-  }
+    console.log(map);
+  };
   return newStr;
-}
+};
 
 //console.log(removeDup('google')); // gole
 //console.log(removeDup('google all that you think can think of')); // gole athyuinkcf
 
 
 // #5
+function palindrome(str) {
+  const map = new Map();
+  let odd = 0;
+
+  for(let i=0; i<str.length; i++) {
+    console.log(map);
+    if(map.get(str[i]) === undefined) {
+      map.set(str[i], 1);
+      console.log(map);
+    }
+    else {
+      let char = map.get(str[i]);
+      map.set(str[i], char+=1);
+      console.log(map);
+    }
+  };
+
+  console.log(map);
+  for(let i=0; i<map.size; i++) {
+    if(map.get(str[i]) % 2 !== 0) {
+      odd++;
+      console.log(map);
+    }
+
+    if(odd > 1) {
+      return false;
+    }
+  };
+  return true;
+};
+
+//console.log(palindrome('acecarr')); // true
+//console.log(palindrome('north')); // false
+//console.log(palindrome('dad')); // true
+//console.log(palindrome('tree')); // false
+
+
+// #6
+function anagrams(arr) {
+  const map = new Map();
+  const result = [];
+
+  for(let i=0; i<arr.length; i++) {
+    if(arr[0]) {
+      map.set(arr[i], arr[i])
+      
+    }
+  }
+  
+  console.log(map);
+  return result;
+}
+
+console.log(anagrams(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
+// 
 
 
