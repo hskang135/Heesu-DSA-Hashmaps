@@ -36,19 +36,19 @@ main();
 
 // #2
 const WhatDoesThisDo = function(){
-  let str1 = 'Hello World.';
-  let str2 = 'Hello World.';
-  let map1 = new HashMap();
-  map1.set(str1,10);
-  map1.set(str2,20);
-  let map2 = new HashMap();
-  let str3 = str1;
-  let str4 = str2;
-  map2.set(str3,20);
-  map2.set(str4,10);
+  let str1 = 'Hello World.'; // set str1 to 'Hello World'
+  let str2 = 'Hello World.'; // set str2 to 'Hello World'
+  let map1 = new HashMap(); // create new map1 hashmap
+  map1.set(str1,10); // set key, value pair ('Hello World', 10)
+  map1.set(str2,20); // set key, value pair ('Hello World', 20)
+  let map2 = new HashMap(); // create another hashmap
+  let str3 = str1; // set str3 to 'Hello World'
+  let str4 = str2; // set str4 to 'Hello World'
+  map2.set(str3,20); // set map2 value of 'Hello World'(str3) to 20
+  map2.set(str4,10); // set map2 value of 'Hello World'(str4) to 10
 
-  //console.log(map1.get(str1));
-  //console.log(map2.get(str3));
+  //console.log(map1.get(str1)); // 20
+  //console.log(map2.get(str3)); // 10
 }
 
 WhatDoesThisDo();
