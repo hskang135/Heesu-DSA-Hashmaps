@@ -64,7 +64,7 @@ WhatDoesThisDo();
 
 // #3-2 Show your hash map after the insertion of the keys 5, 28, 19, 15, 20, 33, 12, 17, 10 into the hash map with collisions resolved by separate chaining. 
 // Let the hash table have a length m = 9, and let the hash function be k mod m.
-// -> [null, [28, 19, 10], 20, 12, null, 5, [15, 33], null, 17]
+// -> [null, 28, 19, 10, 20, 12, null, 5, 15, 33, 17, null]     (not sure??)
 
 
 // #4
@@ -81,8 +81,8 @@ function removeDup(str) {
   return newStr;
 }
 
-console.log(removeDup('google')); // gole
-console.log(removeDup('google all that you think can think of')); // gole athyuinkcf
+//console.log(removeDup('google')); // gole
+//console.log(removeDup('google all that you think can think of')); // gole athyuinkcf
 
 
 // #5
