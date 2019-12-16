@@ -135,20 +135,21 @@ function anagrams(arr) {
     try{
       anagrams = map.get(sorted)
     } catch(e) {
-      anagrams = []
+      anagrams = [];
     }
-    anagrams.push(arr[idx])
-    map.set(sorted, anagrams)
+    anagrams.push(arr[idx]);
+    map.set(sorted, anagrams);
   }
-  console.log(map._hashTable)
+  console.log(map._hashTable);
 
   let results = [];
-  for (let i in map._hashTable) { //still don't like this
+  for (let i in map._hashTable) {
     results.push(map._hashTable[i].value);
   }
   return results;
 }
 
 console.log(anagrams(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
+// [ [ 'acre', 'race' ], [ 'east', 'teas', 'eats' ], [ 'cars', 'arcs' ] ]
 
 
