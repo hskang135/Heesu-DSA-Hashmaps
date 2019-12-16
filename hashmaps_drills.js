@@ -126,19 +126,47 @@ function palindrome(str) {
 
 
 // #6
-function anagrams(arr) {
-  const map = new Map();
-  const result = [];
-
-  for(let i=0; i<arr.length; i++) {
-    if(arr[0]) {
-      map.set(arr[i], arr[i])
-      
-    }
-  }
+// function anagrams(str) {
+//   const map = new Map();
+//   const result = [];
   
-  console.log(map);
-  return result;
+//   str.forEach(string => {
+//     let keys = string.split('').sort().join('');
+//     if(map.has(keys)) {
+//       console.log(map);
+//       map.set(keys,[...map.get(keys), string])
+//     }
+//     else {
+//       map.set(keys, [string])
+//     }
+//   });
+
+//   console.log(map)
+
+//   return result;
+// };
+
+function anagrams(arr) {
+  let map = new HashMap();
+  let results = [];
+  for (let idx in arr) {
+    let sorted = arr[idx].split('').sort().join('');
+    let anagrams;
+    try{
+      anagrams = map.get(sorted)
+    } catch(e) {
+      anagrams = []
+    }
+    anagrams.push(arr[idx])
+    map.set(sorted, anagrams)
+  }
+  console.log(map._hashTable)
+
+  for (let entry in map._hashTable) { //still don't like this
+  console.log(map._hashTable)
+    results.get(entry.value);
+  }
+  return results;
 }
 
 console.log(anagrams(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
